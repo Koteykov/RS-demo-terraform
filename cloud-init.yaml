@@ -16,42 +16,7 @@ runcmd:
   - runuser -l ansible-user -c 'chmod 700 ~/.ssh'
   - |
     runuser -l ansible-user -c 'echo "-----BEGIN OPENSSH PRIVATE KEY-----
-    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
-    NhAAAAAwEAAQAAAYEArBsBl0ZAqZt0I2YLSZee5lFardefsFmW02jzAq/eWWqPSqNrMQn1
-    eSIxCn+Zi2/oRW7zsftgKYCddcDYCGX5I1bk4akwHD087qv0bzpoDHdKGhwgASSwu68D0v
-    U4ZAUrMPH5qPqaR0KvYtW7rL5GCe7N6ki9iDF1AsuYkVMhbXLFtnNlDHuVPwNLz8jQV1kr
-    LoWRI/Uzp7O0lY9XUmxG2phqnRteS7eE9CQKCwXDxNmkUmIu7wa4lgNKJAnmm6wL5CsWkx
-    7Lpx3od4VSRcTUhivZrjgMS3Fev2lI0fb7AWhOCzQbiLB9/1p/Lb4dGemFGy+oKfExSzvX
-    VBcGWp59n2kXlhn0ZrM/nhoMay4xDKK+IwK2kOSlxJyjOrwSdhgu4GpcaEucQEFpAFu6kY
-    EWc+v8eFvD7HLM4FEIF/KdlvZbM4cWc8FBqDvqh8SLDK0xYZxC3nkfCEg3dKt2x0r3h32G
-    LqmybOGISBRm5ZZ6rcQJRctf98LENVToq2SvdtchAAAFgHe8ssh3vLLIAAAAB3NzaC1yc2
-    EAAAGBAKwbAZdGQKmbdCNmC0mXnuZRWq3Xn7BZltNo8wKv3llqj0qjazEJ9XkiMQp/mYtv
-    6EVu87H7YCmAnXXA2Ahl+SNW5OGpMBw9PO6r9G86aAx3ShocIAEksLuvA9L1OGQFKzDx+a
-    j6mkdCr2LVu6y+RgnuzepIvYgxdQLLmJFTIW1yxbZzZQx7lT8DS8/I0FdZKy6FkSP1M6ez
-    tJWPV1JsRtqYap0bXku3hPQkCgsFw8TZpFJiLu8GuJYDSiQJ5pusC+QrFpMey6cd6HeFUk
-    XE1IYr2a44DEtxXr9pSNH2+wFoTgs0G4iwff9afy2+HRnphRsvqCnxMUs711QXBlqefZ9p
-    F5YZ9GazP54aDGsuMQyiviMCtpDkpcScozq8EnYYLuBqXGhLnEBBaQBbupGBFnPr/Hhbw+
-    xyzOBRCBfynZb2WzOHFnPBQag76ofEiwytMWGcQt55HwhIN3SrdsdK94d9hi6psmzhiEgU
-    ZuWWeq3ECUXLX/fCxDVU6Ktkr3bXIQAAAAMBAAEAAAGALRuy8gw2vH2DFhgT00kLG8Cs7K
-    18LEN+9ZAnSUgBFhyIy/5DBQpgLUyZ3++LtfExxqkK9FY3YQlVu9w8gw7/GpUWzlKCypP+
-    WWv2WATN6p6FbIx8kvAj5j072lntWsHEDUMOtYxhTVYcE+KDGwaP4uCVVdeU3ZJg4cetCE
-    Hqm/4d9fEOxhPKDUb24tH2UT6Mw9e8L9l/nW/LX/u+3lqEw5x5LQ5US7IhBcBAZZ0wL3L/
-    z5vuQzXWwXLBRurVZ23TDeBD0VftLyqcXtIc6cR1AiUDV+VuhwhsqY6+vV3gQmjLLLEb56
-    v5WPuP8hNmXLoSGuo813SrKtbVJmIcXMQv7Y8aOM7NNDZUiSos4wEObfk0Bpo+mAqgwciD
-    Ur6b2N+sT95PGeRHX7OLCi9r9K2haCqeqBw9cWwcLiB5WcvWnE/mzBGjVsTLOR3imEuvJe
-    Hq2YA5J15fHiUoui+0EcTuic6ocgVF7eehKCRzHB89y60pmoLXP7GPOqWd3fJ6yLilAAAA
-    wGJJJ2/XSD6gn1Lzc/C0drfYCJwKlXggWwdi7NuO1BD5ddOuZs9sIDoNdjp9edVYmqgJ6m
-    bJMQCW7M03gUEIa6zSR9KdN3QwwchZMNGrdEfT9aTjdZse58JGGrGlN2jKfpKQLYySN2Kq
-    LhP2Z7YxuMMUC0g7yDFfeVck9AJHOZnvfNTSWgTb14lnWsE1D1X0PbqTy4NGpp6s66XKGw
-    QBszJ9xqbe/f9b9+u4eLch0OCDwkRI1+hnrjuVeVufVnlxugAAAMEA3P1qEl81NMo/2GSS
-    72TMyiys0LphaGh9HOZnKdOs2ZzBdFjJApuEx1cV5A5Ub6dsNNHt4liDidGjPFBd5UXB74
-    AqPdCFiuF3wcp8tnBdiLMH8a+yOuHizOfu15t727wup03A2e/6X9QVcjLOgGzldKhMc8zu
-    M5qb1Oakuhey4YVNQee4f5JbjjrQWXBsljbelFDztwohosQaxiAXDg1JjE2ZOsnkULaWjR
-    DTPuSxugQz/tmMjXep4NblVgMerfq/AAAAwQDHXwJtpU3/oaBnO2Yrr3/0AR7P+gRrypLi
-    WjhKQCoRyBkE5quIGIFhEwBmvl401z2XxilBvx7w8U4kKDTLAS3DcrbyqJPosDEO3kcnAj
-    ZuMoonwIp6vrbrWMMuxZPpwh4vrvJw/flNQTcnKzNGXZcxyZHXiRqFt3vm78TJqlMqi/+m
-    1Fu6JXrXYiTsfrjPuBy12YKT5P1b6fr6wVnjpE0zZp5EInR6ETwLJFD6hbOBy/ITaoTo40
-    kBVQkEsAW7Bh8AAAALc2FuYUBVYnVudHU=
+    *****
     -----END OPENSSH PRIVATE KEY-----" > .ssh/id_rsa'
     runuser -l ansible-user -c 'chmod 600 .ssh/id_rsa'
 
@@ -59,8 +24,8 @@ runcmd:
 
     runuser -l ansible-user -c 'mkdir .aws'
     runuser -l ansible-user -c 'echo "[default]
-    aws_access_key_id=AKIA3NZDCK4D7QQPOKNH
-    aws_secret_access_key=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" > .aws/credentials'
+    aws_access_key_id=*****
+    aws_secret_access_key=*****" > .aws/credentials'
 
     runuser -l ansible-user -c 'aws s3 cp s3://rs-s3-bucket/rs-demo.tgz rs-demo.tgz'
     runuser -l ansible-user -c 'tar -xf rs-demo.tgz' 
