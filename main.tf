@@ -9,13 +9,13 @@ variable instance_type {}
 variable public_key_location {}
 
 variable "private-ips" {
-    default = {
-        0 = "10.0.10.10"
-        1 = "10.0.10.20"
-        2 = "10.0.10.30"
-        3 = "10.0.10.40"
-        4 = "10.0.10.50"
-    }
+    default = [
+        "10.0.10.10",
+        "10.0.10.20",
+        "10.0.10.30",
+        "10.0.10.40",
+        "10.0.10.50"
+    ]
 }
 
 resource "aws_vpc" "dev-vpc" {
@@ -123,7 +123,7 @@ resource "aws_instance" "RS-control-server" {
     subnet_id = aws_subnet.dev-subnet-1.id
     vpc_security_group_ids = [aws_default_security_group.default-secgroup.id]
     associate_public_ip_address = true
-    private_ip = lookup(var.private-ips,0)
+    private_ip = var.private-ips[0]
     availability_zone = var.avail_zone
     key_name = aws_key_pair.ssh-key.key_name
 
@@ -157,42 +157,13 @@ resource "aws_instance" "RS-haproxy-server" {
 }
 
 resource "aws_instance" "RS-apache-server" {
+    count = 3
     ami = data.aws_ami.centos_9.id
     instance_type = var.instance_type
     subnet_id = aws_subnet.dev-subnet-1.id
     vpc_security_group_ids = [aws_default_security_group.default-secgroup.id]
     associate_public_ip_address = true
-    private_ip = lookup(var.private-ips,2)
-    availability_zone = var.avail_zone
-    key_name = aws_key_pair.ssh-key.key_name
-
-    tags = {
-        Name: "${var.env_prefix}-apache-server"
-    }
-}
-
-resource "aws_instance" "RS-apache-server-2" {
-    ami = data.aws_ami.centos_9.id
-    instance_type = var.instance_type
-    subnet_id = aws_subnet.dev-subnet-1.id
-    vpc_security_group_ids = [aws_default_security_group.default-secgroup.id]
-    associate_public_ip_address = true
-    private_ip = lookup(var.private-ips,3)
-    availability_zone = var.avail_zone
-    key_name = aws_key_pair.ssh-key.key_name
-
-    tags = {
-        Name: "${var.env_prefix}-apache-server"
-    }
-}
-
-resource "aws_instance" "RS-apache-server-3" {
-    ami = data.aws_ami.centos_9.id
-    instance_type = var.instance_type
-    subnet_id = aws_subnet.dev-subnet-1.id
-    vpc_security_group_ids = [aws_default_security_group.default-secgroup.id]
-    associate_public_ip_address = true
-    private_ip = lookup(var.private-ips,4)
+    private_ip = var.private-ips[count.index + 1]
     availability_zone = var.avail_zone
     key_name = aws_key_pair.ssh-key.key_name
 
@@ -218,11 +189,4 @@ resource "aws_s3_object" "ansible_upload" {
   key = "rs-demo.tgz"
   source = "/home/sana/RS-ansible/rs-demo.tgz"
   etag   = "${filemd5("/home/sana/RS-ansible/rs-demo.tgz")}"
-}
-
-resource "aws_s3_object" "haproxy_cfg_upload" {
-  bucket = aws_s3_bucket.s3_bucket.bucket
-  key = "haproxy.cfg"
-  source = "/home/sana/RS-haproxy/haproxy.cfg"
-  etag   = "${filemd5("/home/sana/RS-haproxy/haproxy.cfg")}"
 }
